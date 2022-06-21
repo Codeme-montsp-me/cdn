@@ -8,31 +8,71 @@
   <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
   <title>記事一覧 - Codeme</title>
+  <style>
+    ion-card {
+    text-align: center;
+    padding-bottom: 1%;
+    padding-top:1%;
+    padding-left:1%;
+    padding-right: 1%;
+}
+  </style>
 </head>
 
 <body>
   <ion-app>
     <ion-header>
       <ion-toolbar>
+        <ion-buttons>
+          <ion-button  size="small" id="nested-button"><ion-icon name="menu-outline"></ion-icon></ion-button>
+        </ion-buttons>
         <ion-title>
           記事一覧
         </ion-title>
-        <ion-button  size="small" slot="start" id="nested-button"><ion-icon name="menu-outline"></ion-icon></ion-button>
 <ion-popover trigger="nested-button" [dismissOnSelect]="true">
   <ng-template>
     <ion-content>
       <ion-list>
+        <ion-list-header>メニュー</ion-list-header>
         <ion-item [button]="true" [detail]="false" href="/">
           <ion-label>ホーム</ion-label>
         </ion-item>
+        <ion-item [button]="true" [detail]="false" id="article">
+          <ion-label>記事</ion-label>
+        </ion-item>
+        <ion-item [button]="true" [detail]="false" href="/about.html">
+          <ion-label>About</ion-label>
+        </ion-item>
+        <ion-item [button]="true" [detail]="false" href="/Inquiries.html">
+          <ion-label>お問い合わせ・記事募集・アンケート</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ng-template>
+</ion-popover>
+<ion-popover trigger="article" [dismissOnSelect]="true" side="right">
+  <ng-template>
+    <ion-content>
+      <ion-list>
         <ion-item [button]="true" [detail]="false" href="/articlelist.html">
           <ion-label>記事一覧</ion-label>
         </ion-item>
-        <ion-item [button]="true" [detail]="false" href="https://montsp-me.translate.goog/?_x_tr_sl=ja&_x_tr_tl=de&_x_tr_hl=ja&_x_tr_pto=wapp">
-          <ion-label>Deutsch</ion-label>
+        <ion-item [button]="true" [detail]="false" id="tags">
+          <ion-label>タグ</ion-label>
         </ion-item>
-        <ion-item [button]="true" [detail]="false" href="https://montsp-me.translate.goog/?_x_tr_sl=ja&_x_tr_tl=zh-CN&_x_tr_hl=ja&_x_tr_pto=wapp">
-          <ion-label>中文</ion-label>
+      </ion-list>
+    </ion-content>
+  </ng-template>
+</ion-popover>
+<ion-popover trigger="tags" [dismissOnSelect]="true" >
+  <ng-template>
+    <ion-content>
+      <ion-list>
+        <ion-item [button]="true" [detail]="false" href="/">
+          <ion-label>ionic</ion-label>
+        </ion-item>
+        <ion-item [button]="true" [detail]="false" href="/">
+          <ion-label>pcの豆知識</ion-label>
         </ion-item>
       </ion-list>
     </ion-content>
@@ -42,9 +82,23 @@
     </ion-header>
 
     <ion-content>
-      <ion-card href="/category">
+      <ion-card>
         <div>
-        <ion-card-title>種類別に見る</ion-card-title>
+        <ion-card-title id="tag">タグ別に見る</ion-card-title>
+        <ion-popover trigger="tag" [dismissOnSelect]="true" >
+          <ng-template>
+            <ion-content>
+              <ion-list>
+                <ion-item [button]="true" [detail]="false" href="/">
+                  <ion-label>ionic</ion-label>
+                </ion-item>
+                <ion-item [button]="true" [detail]="false" href="/">
+                  <ion-label>pcの豆知識</ion-label>
+                </ion-item>
+              </ion-list>
+            </ion-content>
+          </ng-template>
+        </ion-popover>
         </div>
       </ion-card>
   
