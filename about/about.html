@@ -6,8 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
   <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6XE74BJL0E"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />\
   <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-232657972-1"></script>
 <script>
@@ -24,7 +23,7 @@
 
   gtag('config', 'G-6XE74BJL0E');
 </script>
-  <title>お問い合わせ・記事募集 - Codeme</title>
+  <title>about - Codeme</title>
   <style>
     ion-card {
     text-align: center;
@@ -44,7 +43,7 @@
           <ion-button  size="small" id="nested-button"><ion-icon name="menu-outline"></ion-icon></ion-button>
         </ion-buttons>
         <ion-title>
-            お問い合わせ・記事募集
+          about
         </ion-title>
 <ion-popover trigger="nested-button" [dismissOnSelect]="true">
   <ng-template>
@@ -99,15 +98,20 @@
     </ion-header>
 
     <ion-content>
-    <ion-card>
-        <h1>お問い合わせはこちら</h1>
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdTJkVWRneXzvbLwVtnBOvRzWfzw3gG7vZvhW-uaYb0iOmhDw/viewform?embedded=true" width="640" height="1023" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
-    </ion-card>
-    <ion-card>
-        <h1>記事募集はこちら
-        </h1>
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdSSgIu2Dwtn-ymqCfuehKehE7DdXGCBSh0FcTNkMapAr1KRg/viewform?embedded=true" width="640" height="1138" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
-    </ion-card>
+        <ion-card>
+
+            <ion-card-content>このサイトは、実際に試して面白かったこと等、主に技術系のことを書いています。また、日本にionicの情報が少ないこと、ionicの日本語ドキュメンテーションがわかりにくい部分があるなどの理由から立ち上がったプロジェクトです。情報に誤りや誤字脱字等があった場合はお問い合せまたは以下のメールにてにて運営までご連絡ください。</ion-card-content>
+            <ion-card>
+              <ion-card-title>メールはこちらです。</ion-card-title>
+              <ion-card-content>info@montsp.me</ion-card-content>
+            </ion-card>  
+        
+          </ion-card>
+          <ion-card href="./montsp.html">
+            <ion-card-title>このサイトのオーナーのプロフィール</ion-card-title>
+          </ion-card>
+        
+        
         
     </ion-content>
   </ion-app>
